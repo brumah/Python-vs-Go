@@ -30,10 +30,10 @@ func BlueButton() string {
 	swapHTML := `<table class='table-auto w-full border border-collapse text-center'>
 	<thead>
 	<tr>
-	<th class='px-4 py-2 border border-gray-900'>Username</th>
-	<th class='px-4 py-2 border border-gray-900'>Account Creation Date</th>
-	<th class='px-4 py-2 border border-gray-900'>Follower Count</th>
-	<th class='px-4 py-2 border border-gray-900'>Post Count</th>
+	<th class='px-4 py-2 border border-gray-600'>Username</th>
+	<th class='px-4 py-2 border border-gray-600'>Account Creation Date</th>
+	<th class='px-4 py-2 border border-gray-600'>Follower Count</th>
+	<th class='px-4 py-2 border border-gray-600'>Post Count</th>
 	</tr>
 	</thead>
 	<tbody>`
@@ -48,10 +48,10 @@ func BlueButton() string {
 		}
 		swapHTML = swapHTML + fmt.Sprintf(`
 		<tr>
-		<td class='px-4 py-2 border border-gray-900'>%s</td>
-		<td class='px-4 py-2 border border-gray-900'>%s</td>
-		<td class='px-4 py-2 border border-gray-900'>%v</td>
-		<td class='px-4 py-2 border border-gray-900'>%v</td>
+		<td class='px-4 py-2 border border-gray-600'>%s</td>
+		<td class='px-4 py-2 border border-gray-600'>%s</td>
+		<td class='px-4 py-2 border border-gray-600'>%v</td>
+		<td class='px-4 py-2 border border-gray-600'>%v</td>
 		</tr>`,
 			column1, column2.Format("2006-01-02"), column3, column4)
 		count++
@@ -78,13 +78,13 @@ func GreenButton() string {
 	}
 	defer rows.Close()
 
-	swapHTML := `<table class='table-auto w-full border border-collapse text-center'>
+	swapHTML := `<table class='table-auto w-full border	border-gray-600 text-center'>
 	<thead>
 	<tr>
-	<th class='px-4 py-2 border border-gray-900'>Username</th>
-	<th class='px-4 py-2 border border-gray-900'>Account Creation Date</th>
-	<th class='px-4 py-2 border border-gray-900'>Follower Count</th>
-	<th class='px-4 py-2 border border-gray-900'>Post Count</th>
+	<th class='px-4 py-2 border-separate border-gray-600'>Username</th>
+	<th class='px-4 py-2 border-separate border-gray-600'>Account Creation Date</th>
+	<th class='px-4 py-2 border-separate border-gray-600'>Follower Count</th>
+	<th class='px-4 py-2 border-separate border-gray-600'>Post Count</th>
 	</tr>
 	</thead>
 	<tbody>`
@@ -99,10 +99,10 @@ func GreenButton() string {
 		}
 		swapHTML = swapHTML + fmt.Sprintf(`
 		<tr>
-		<td class='px-4 py-2 border border-gray-900'>%s</td>
-		<td class='px-4 py-2 border border-gray-900'>%s</td>
-		<td class='px-4 py-2 border border-gray-900'>%v</td>
-		<td class='px-4 py-2 border border-gray-900'>%v</td>
+		<td class='px-4 py-2 border border-gray-600'>%s</td>
+		<td class='px-4 py-2 border border-gray-600'>%s</td>
+		<td class='px-4 py-2 border border-gray-600'>%v</td>
+		<td class='px-4 py-2 border border-gray-600'>%v</td>
 		</tr>`,
 			column1, column2.Format("2006-01-02"), column3, column4)
 		count++
@@ -116,10 +116,10 @@ func ClearButton() string {
 	<table class="table-auto w-full border border-collapse text-center" id="target">
 		<thead>
 			<tr>
-				<th class="px-4 py-2 border border-gray-900">Username</th>
-				<th class="px-4 py-2 border border-gray-900">Account Creation Date</th>
-				<th class="px-4 py-2 border border-gray-900">Follower Count</th>
-				<th class="px-4 py-2 border border-gray-900">Post Count</th>
+				<th class="px-4 py-2 border border-gray-600">Username</th>
+				<th class="px-4 py-2 border border-gray-600">Account Creation Date</th>
+				<th class="px-4 py-2 border border-gray-600">Follower Count</th>
+				<th class="px-4 py-2 border border-gray-600">Post Count</th>
 			</tr>
 		</thead>
 	</table>
