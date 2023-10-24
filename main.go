@@ -39,6 +39,12 @@ func queryHandler(w http.ResponseWriter, r *http.Request) {
 		text = queries.GreenButton()
 		fmt.Println(time.Since(start))
 	case "3":
+		text = queries.RedButton()
+		fmt.Println(time.Since(start))
+	case "4":
+		text = queries.PurpleButton()
+		fmt.Println(time.Since(start))
+	case "5":
 		text = queries.ClearButton()
 		fmt.Println(time.Since(start))
 	}

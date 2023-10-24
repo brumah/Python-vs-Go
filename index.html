@@ -17,14 +17,24 @@
                         hx-get="/queries?id=1"
                         hx-target="#target"
                         hx-swap="innerhtml">
-                        Select All</button>
+                        Select All Users</button>
                 <button class="bg-green-800 hover:bg-green-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg mt-4"
                         hx-get="/queries?id=2"
                         hx-target="#target"
                         hx-swap="innerhtml">
-                        Select Conditional</button>
-                <button class="bg-slate-800 hover:bg-slate-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg mt-4"
+                        Select Posts (conditional)</button>
+                <button class="bg-rose-800 hover:bg-rose-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg mt-4"
                         hx-get="/queries?id=3"
+                        hx-target="#target"
+                        hx-swap="innerhtml">
+                        Get Follower Counts (1 Join)</button>
+                <button class="bg-violet-800 hover:bg-violet-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg mt-4"
+                        hx-get="/queries?id=4"
+                        hx-target="#target"
+                        hx-swap="innerhtml">
+                        Get Likes on Post (2 Joins)</button>
+                <button class="bg-slate-800 hover:bg-slate-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg mt-4"
+                        hx-get="/queries?id=5"
                         hx-target="#target"
                         hx-swap="innerhtml">
                         Clear</button>
@@ -35,10 +45,8 @@
                 <table class="table-auto w-full border border-collapse text-center" id="target">
                     <thead>
                         <tr>
-                            <th class="px-4 py-2 border border-slate-600">Username</th>
-                            <th class="px-4 py-2 border border-slate-600">Account Creation Date</th>
-                            <th class="px-4 py-2 border border-slate-600">Follower Count</th>
-                            <th class="px-4 py-2 border border-slate-600">Post Count</th>
+                            <th class="px-4 py-2 border border-slate-600 bg-slate-400">Username</th>
+                            <th class="px-4 py-2 border border-slate-600 bg-slate-400">Account Creation Date</th>
                         </tr>
                     </thead>
                 </table>
