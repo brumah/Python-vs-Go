@@ -34,21 +34,17 @@ func queryHandler(w http.ResponseWriter, r *http.Request) {
 	switch id {
 	case "1":
 		text = queries.BlueButton()
-		fmt.Println(time.Since(start))
 	case "2":
 		text = queries.GreenButton()
-		fmt.Println(time.Since(start))
 	case "3":
 		text = queries.RedButton()
-		fmt.Println(time.Since(start))
 	case "4":
 		text = queries.PurpleButton()
-		fmt.Println(time.Since(start))
 	case "5":
 		text = queries.ClearButton()
-		fmt.Println(time.Since(start))
 	}
 
 	tmpl, _ := template.New("t").Parse(text)
 	tmpl.Execute(w, nil)
+	fmt.Println(time.Since(start))
 }

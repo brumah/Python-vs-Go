@@ -35,7 +35,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
 
 
 def run_server(handler_class=CustomHandler, server_class=HTTPServer):
-    server_address = ('', 8000)
+    server_address = ('', 8080)
     httpd = server_class(server_address, handler_class)
     
     print(f"Starting server on port {server_address[1]}...")
