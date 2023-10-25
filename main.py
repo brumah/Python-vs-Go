@@ -1,11 +1,15 @@
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 import queries.queries as queries
+import time
 
 class CustomHandler(SimpleHTTPRequestHandler):
+    latency_values = []
+
     def do_GET(self):
         parsed_url = urlparse(self.path)
         query = parse_qs(parsed_url.query)
+        start = time.time()
 
         if parsed_url.path == '/':
             self.send_response(200)
@@ -26,13 +30,17 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 text = queries.red_button()
             elif id == "4":
                 text = queries.purple_button()
-            else:
+            elif id == "5":
                 text = queries.clear_button()
+            elif id == "6":
+                text = queries.export_button(CustomHandler.latency_values)
+                CustomHandler.latency_values = []
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
             self.wfile.write(text.encode())
-
+            print(time.time() - start)
+            CustomHandler.latency_values.append(time.time() - start)
 
 def run_server(handler_class=CustomHandler, server_class=HTTPServer):
     server_address = ('', 8080)

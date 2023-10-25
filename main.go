@@ -10,6 +10,8 @@ import (
 	"github.com/brunerMatthew/Python-vs-Go/queries"
 )
 
+var latencyValues []string
+
 func main() {
 	http.HandleFunc("/getquery", queryHandler)
 	http.HandleFunc("/", rootHandler)
@@ -42,9 +44,15 @@ func queryHandler(w http.ResponseWriter, r *http.Request) {
 		text = queries.PurpleButton()
 	case "5":
 		text = queries.ClearButton()
+	case "6":
+		text = queries.ExportButton(latencyValues)
+		latencyValues = []string{}
 	}
 
 	tmpl, _ := template.New("t").Parse(text)
 	tmpl.Execute(w, nil)
 	fmt.Println(time.Since(start))
+	if id != "6" {
+		latencyValues = append(latencyValues, fmt.Sprintf("%v", time.Since(start)))
+	}
 }

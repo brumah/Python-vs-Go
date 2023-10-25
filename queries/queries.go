@@ -2,8 +2,10 @@ package queries
 
 import (
 	"database/sql"
+	"encoding/csv"
 	"fmt"
 	"log"
+	"os"
 	"time"
 
 	_ "github.com/lib/pq"
@@ -224,4 +226,26 @@ func ClearButton() string {
 		</thead>
 	</table>
 	`
+}
+
+func ExportButton(latencies []string) string {
+	latencyValues := latencies
+
+	// Create a new CSV file
+	file, err := os.Create("latencies/output.csv")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	// Create a CSV writer
+	writer := csv.NewWriter(file)
+	defer writer.Flush()
+
+	// Write the data slice to the CSV file
+	err = writer.Write(latencyValues)
+	if err != nil {
+		panic(err)
+	}
+	return "Export Latencies"
 }

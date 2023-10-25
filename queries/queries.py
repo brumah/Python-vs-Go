@@ -1,4 +1,5 @@
 import psycopg2
+import csv
 
 def blue_button():
     db_connection = psycopg2.connect(
@@ -191,3 +192,13 @@ def clear_button():
             </thead>
 	    </table>
     """
+
+def export_button(latencies):
+
+    path = "latencies/output.csv"
+    with open(path, mode='w', newline='') as file:
+        writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        for latency in latencies:
+            writer.writerow([latency])
+
+    return "Export Latencies"
