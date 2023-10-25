@@ -40,7 +40,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(text.encode())
             print(time.time() - start)
-            CustomHandler.latency_values.append(time.time() - start)
+            CustomHandler.latency_values.append(round((float(time.time() - start)) * 1000,2))
 
 def run_server(handler_class=CustomHandler, server_class=HTTPServer):
     server_address = ('', 8080)

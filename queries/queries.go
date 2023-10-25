@@ -230,22 +230,20 @@ func ClearButton() string {
 
 func ExportButton(latencies []string) string {
 	latencyValues := latencies
-
-	// Create a new CSV file
 	file, err := os.Create("latencies/output.csv")
 	if err != nil {
 		panic(err)
 	}
 	defer file.Close()
 
-	// Create a CSV writer
 	writer := csv.NewWriter(file)
 	defer writer.Flush()
 
-	// Write the data slice to the CSV file
-	err = writer.Write(latencyValues)
-	if err != nil {
-		panic(err)
+	for _, value := range latencyValues {
+		err := writer.Write([]string{value})
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 	return "Export Latencies"
 }

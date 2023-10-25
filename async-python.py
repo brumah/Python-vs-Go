@@ -29,7 +29,7 @@ async def get_query(request):
         latency_values = set()
     
     print(time.time() - start)
-    latency_values.add(time.time() - start)
+    latency_values.add(round((float(time.time() - start)) * 1000,2))
     return web.Response(text=text, content_type='text/html')
 
 app = web.Application()

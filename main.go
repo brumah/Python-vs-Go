@@ -53,6 +53,6 @@ func queryHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, nil)
 	fmt.Println(time.Since(start))
 	if id != "6" {
-		latencyValues = append(latencyValues, fmt.Sprintf("%v", time.Since(start)))
+		latencyValues = append(latencyValues, fmt.Sprintf("%.2f", float64(time.Since(start))/1000000))
 	}
 }
