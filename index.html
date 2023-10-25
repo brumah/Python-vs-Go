@@ -6,7 +6,7 @@
     <script src="https://unpkg.com/htmx.org@1.9.6"></script>
 </head>
 <body>
-    <h1 class="text-4xl font-bold text-slate-900 text-center bg-slate-500">Golang Requests</h1>
+    <h1 class="text-4xl font-bold text-slate-900 text-center bg-slate-500">Python vs Go</h1>
     <div class="min-h-screen flex items-center justify-center bg-slate-500">
         <!-- Container for the two columns -->
         <div class="container mx-auto p-6 bg-slate-300 shadow-lg rounded-lg flex">
@@ -14,27 +14,27 @@
             <div class="w-1/5 p-6 flex flex-col items-center">
                 <h2 class="text-3xl font-semibold text-slate-800 mb-4 text-center">Query</h2>
                 <button class="bg-blue-800 hover:bg-blue-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg"
-                        hx-get="/queries?id=1"
+                        hx-get="/getquery?id=1"
                         hx-target="#target"
                         hx-swap="innerhtml">
                         Select All Users</button>
                 <button class="bg-green-800 hover:bg-green-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg mt-4"
-                        hx-get="/queries?id=2"
+                        hx-get="/getquery?id=2"
                         hx-target="#target"
                         hx-swap="innerhtml">
                         Select Posts (conditional)</button>
                 <button class="bg-rose-800 hover:bg-rose-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg mt-4"
-                        hx-get="/queries?id=3"
+                        hx-get="/getquery?id=3"
                         hx-target="#target"
                         hx-swap="innerhtml">
                         Get Follower Counts (1 Join)</button>
                 <button class="bg-violet-800 hover:bg-violet-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg mt-4"
-                        hx-get="/queries?id=4"
+                        hx-get="/getquery?id=4"
                         hx-target="#target"
                         hx-swap="innerhtml">
                         Get Likes on Post (2 Joins)</button>
                 <button class="bg-slate-800 hover:bg-slate-700 hover:scale-105 hover:duration-200 text-slate-300 font-bold py-2 px-4 rounded-lg mt-4"
-                        hx-get="/queries?id=5"
+                        hx-get="/getquery?id=5"
                         hx-target="#target"
                         hx-swap="innerhtml">
                         Clear</button>

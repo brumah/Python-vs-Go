@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/queries", queryHandler)
+	http.HandleFunc("/getquery", queryHandler)
 	http.HandleFunc("/", rootHandler)
 
 	port := ":8080"
