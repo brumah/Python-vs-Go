@@ -12,7 +12,7 @@ import (
 )
 
 func BlueButton() string {
-	connectionString := "user=matthewbruner host=localhost port=5432 dbname=matthewbruner sslmode=disable"
+	connectionString := "user=matthewbruner host=localhost port=5432 dbname=python-vs-go sslmode=disable"
 	db, err := sql.Open("postgres", connectionString)
 	if err != nil {
 		log.Fatal(err)
@@ -58,7 +58,7 @@ func BlueButton() string {
 }
 
 func GreenButton() string {
-	connectionString := "user=matthewbruner host=localhost port=5432 dbname=matthewbruner sslmode=disable"
+	connectionString := "user=matthewbruner host=localhost port=5432 dbname=python-vs-go sslmode=disable"
 	db, err := sql.Open("postgres", connectionString)
 	if err != nil {
 		log.Fatal(err)
@@ -106,7 +106,7 @@ func GreenButton() string {
 }
 
 func RedButton() string {
-	connectionString := "user=matthewbruner host=localhost port=5432 dbname=matthewbruner sslmode=disable"
+	connectionString := "user=matthewbruner host=localhost port=5432 dbname=python-vs-go sslmode=disable"
 	db, err := sql.Open("postgres", connectionString)
 	if err != nil {
 		log.Fatal(err)
@@ -159,7 +159,7 @@ func RedButton() string {
 }
 
 func PurpleButton() string {
-	connectionString := "user=matthewbruner host=localhost port=5432 dbname=matthewbruner sslmode=disable"
+	connectionString := "user=matthewbruner host=localhost port=5432 dbname=python-vs-go sslmode=disable"
 	db, err := sql.Open("postgres", connectionString)
 	if err != nil {
 		log.Fatal(err)

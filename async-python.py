@@ -7,7 +7,7 @@ async def index(request):
         content = file.read()
         return web.Response(body=content, content_type='text/html')
 
-latency_values = set()
+latency_values = list()
 
 async def get_query(request):
     global latency_values
@@ -25,11 +25,11 @@ async def get_query(request):
     elif id == "5":
         text = queries.clear_button()
     elif id == "6":
-        text = queries.export_button(list(latency_values))
-        latency_values = set()
+        text = queries.export_button(latency_values)
+        latency_values = list()
     
     print(time.time() - start)
-    latency_values.add(round((float(time.time() - start)) * 1000,2))
+    latency_values.append(round((float(time.time() - start)) * 1000,2))
     return web.Response(text=text, content_type='text/html')
 
 app = web.Application()

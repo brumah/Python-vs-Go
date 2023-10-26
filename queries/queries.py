@@ -4,7 +4,7 @@ import csv
 def blue_button():
     db_connection = psycopg2.connect(
         host='localhost',
-        dbname="matthewbruner", 
+        dbname="python-vs-go", 
         user="matthewbruner",
         port="5432"
     )
@@ -44,7 +44,7 @@ def blue_button():
 def green_button():
     db_connection = psycopg2.connect(
         host='localhost',
-        dbname="matthewbruner", 
+        dbname="python-vs-go", 
         user="matthewbruner",
         port="5432"
     )
@@ -86,7 +86,7 @@ def green_button():
 def red_button():
     db_connection = psycopg2.connect(
         host='localhost',
-        dbname="matthewbruner", 
+        dbname="python-vs-go", 
         user="matthewbruner",
         port="5432"
     )
@@ -133,7 +133,7 @@ def red_button():
 def purple_button():
     db_connection = psycopg2.connect(
         host='localhost',
-        dbname="matthewbruner", 
+        dbname="python-vs-go", 
         user="matthewbruner",
         port="5432"
     )
