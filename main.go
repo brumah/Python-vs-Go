@@ -13,6 +13,7 @@ import (
 var latencyValues []string
 
 func main() {
+
 	http.HandleFunc("/getquery", queryHandler)
 	http.HandleFunc("/", rootHandler)
 
@@ -35,16 +36,14 @@ func queryHandler(w http.ResponseWriter, r *http.Request) {
 
 	switch id {
 	case "1":
-		text = queries.BlueButton()
+		text, _ = queries.BlueButton()
 	case "2":
-		text = queries.GreenButton()
+		text, _ = queries.RedButton()
 	case "3":
-		text = queries.RedButton()
+		text, _ = queries.PurpleButton()
 	case "4":
-		text = queries.PurpleButton()
-	case "5":
 		text = queries.ClearButton()
-	case "6":
+	case "5":
 		text = queries.ExportButton(latencyValues)
 		latencyValues = []string{}
 	}

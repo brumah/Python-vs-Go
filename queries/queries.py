@@ -1,7 +1,9 @@
 import psycopg2
 import csv
+import time
 
 def blue_button():
+    # start = time.time()
     db_connection = psycopg2.connect(
         host='localhost',
         dbname="python-vs-go", 
@@ -9,11 +11,16 @@ def blue_button():
         port="5432"
     )
     cursor = db_connection.cursor()
+    # print(f"DB connection: {(time.time() - start) * 1000}")
 
+    # start = time.time()
     query = "SELECT username, date_created FROM users;"
 
     cursor.execute(query)
+    # print(f"query DB: {(time.time() - start) * 1000}")
+    # start = time.time()
     rows = cursor.fetchall()
+    # print(f"Unpack all Data: {(time.time() - start) * 1000}")
 
     swapHTML = """
         <table class='table-auto w-full border border-collapse text-center'>
@@ -41,47 +48,6 @@ def blue_button():
 
     return swapHTML
 
-def green_button():
-    db_connection = psycopg2.connect(
-        host='localhost',
-        dbname="python-vs-go", 
-        user="matthewbruner",
-        port="5432"
-    )
-    cursor = db_connection.cursor()
-
-    query = "SELECT user_id, post_date, id FROM posts WHERE post_Date > '2021-01-01';"
-
-    cursor.execute(query)
-    rows = cursor.fetchall()
-
-    swapHTML = """
-        <table class='table-auto w-full border border-collapse text-center'>
-            <thead>
-                <tr>
-                    <th class='px-4 py-2 border-separate border-gray-600 bg-slate-400'>User ID</th>
-                    <th class='px-4 py-2 border-separate border-gray-600 bg-slate-400'>Post Date</th>
-                    <th class='px-4 py-2 border-separate border-gray-600 bg-slate-400'>Post ID</th>
-                </tr>
-            </thead>
-            <tbody>
-    """
-
-    for i in range(5):
-        swapHTML = swapHTML + f"""
-            <tr>
-                <td class='px-4 py-2 border border-gray-600'>{rows[i][0]}</td>
-                <td class='px-4 py-2 border border-gray-600'>{rows[i][1]}</td>
-                <td class='px-4 py-2 border border-gray-600'>{rows[i][2]}</td>
-            </tr>
-        """
-
-    swapHTML = swapHTML + """
-            </tbody>
-        </table>
-    """
-
-    return swapHTML
 
 def red_button():
     db_connection = psycopg2.connect(
